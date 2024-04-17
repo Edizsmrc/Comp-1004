@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus Check Tool</title> <!-- Title that is shown on the tabs.-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/> <!-- Adding the favicon. -->
+</head>
+<body>
+    <div class="container">
+        <h1>Virus Check Tool</h1> <!-- Name of the tool. -->
+        <div class="question">
+            <label for="name">Your Name:</label><!-- Text and input area for entering you name.-->
+            <input type="text" id="name" name="name">
+        </div>
+        <form id="virusCheckForm"> <!-- These are the questions and choices you can make. -->
+            <div class="question">
+                <label for="slow">Is your computer running unusually slow?</label>
+                <div class="options">
+                    <input type="radio" name="slow" id="slowYes" value="yes">
+                    <label for="slowYes">Yes</label>
+                    <input type="radio" name="slow" id="slowNo" value="no">
+                    <label for="slowNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="popups">Are you seeing unexpected pop-up ads?</label>
+                <div class="options">
+                    <input type="radio" name="popups" id="popupsYes" value="yes">
+                    <label for="popupsYes">Yes</label>
+                    <input type="radio" name="popups" id="popupsNo" value="no">
+                    <label for="popupsNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="antivirus">Do you have an antivirus software installed?</label>
+                <div class="options">
+                    <input type="radio" name="antivirus" id="antivirusYes" value="yes">
+                    <label for="antivirusYes">Yes</label>
+                    <input type="radio" name="antivirus" id="antivirusNo" value="no">
+                    <label for="antivirusNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="update">When was the last time you updated your antivirus?</label>
+                <input type="date" id="updateDate" name="update">
+            </div>
+            <div class="question">
+                <label for="suspiciousEmails">Have you received any suspicious emails with attachments?</label>
+                <div class="options">
+                    <input type="radio" name="suspiciousEmails" id="suspiciousEmailsYes" value="yes">
+                    <label for="suspiciousEmailsYes">Yes</label>
+                    <input type="radio" name="suspiciousEmails" id="suspiciousEmailsNo" value="no">
+                    <label for="suspiciousEmailsNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="weirdPrograms">Have you noticed any weird programs running on your computer?</label>
+                <div class="options">
+                    <input type="radio" name="weirdPrograms" id="weirdProgramsYes" value="yes">
+                    <label for="weirdProgramsYes">Yes</label>
+                    <input type="radio" name="weirdPrograms" id="weirdProgramsNo" value="no">
+                    <label for="weirdProgramsNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="encryptFiles">Are your files encrypted and asking for ransom?</label>
+                <div class="options">
+                    <input type="radio" name="encryptFiles" id="encryptFilesYes" value="yes">
+                    <label for="encryptFilesYes">Yes</label>
+                    <input type="radio" name="encryptFiles" id="encryptFilesNo" value="no">
+                    <label for="encryptFilesNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="unauthorizedAccess">Have you noticed any unauthorized access to your accounts?</label>
+                <div class="options">
+                    <input type="radio" name="unauthorizedAccess" id="unauthorizedAccessYes" value="yes">
+                    <label for="unauthorizedAccessYes">Yes</label>
+                    <input type="radio" name="unauthorizedAccess" id="unauthorizedAccessNo" value="no">
+                    <label for="unauthorizedAccessNo">No</label>
+                </div>
+            </div>
+            <div class="question">
+                <label for="actions">Have you taken any actions to remove viruses?</label>
+                <textarea id="actionsTaken" name="actions" rows="4"></textarea>
+            </div>
+            <button type="submit" id="submitBtn">Check</button> <!-- This is the submit button.-->
+        </form>
+        <div id="result" class="hidden">
+            <h2>Result:</h2>  <!-- This is the results area that shows the results of the user. Current and previous user choices works on one code.-->
+            <p id="advice0"></p>
+            <a href="https://www.ilr.cornell.edu/faculty-and-staff-resources/technology-services/services/desktop-support/spyware-adware-and-viruses"><p id="advice1"></p></a>
+            <a href="https://www.educative.io/answers/what-is-the-difference-between-keyloggers-and-trojans"><p id="advice2"></p></a>
+            <a href="https://www.avast.com/c-cryptolocker"><p id="advice3"></p></a>
+            <a href="https://uk.pcmag.com/antivirus/8141/the-best-antivirus-protection"><p id="advice4"></p></a>
+            <p id="link1"></p>
+        </div> <!-- This are takes the saved data from the JSON file depending on what you have put for the name.-->
+        <div class="question">
+            <label for="name">Your Name:</label>
+            <input type="text" id="nameInput" name="name">
+            <button id="retrieveData">Retrieve Previous Data</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script> <!-- Connecting the script with the html code.-->
+</body>
+</html>
